@@ -93,12 +93,31 @@
 .container {
   color: var(--text-color);
 
-  /* 부모의 값을 상속받는다 */
+  /* 규칙의 값 상속받음 */
+  /* 규칙의 값이 없을 경우 부모의 값을 상속받는다. */
   .parent {
     --text-color: blue;
 
     .child {
       color: var(--text-color);
+    }
+  }
+}
+
+.lion {
+  color: red;
+  border: 1px solid green;
+
+  .parent {
+    padding: inherit;
+    margin: 0;
+
+    .child {
+      color: black;
+      border: 1px solid blue;
+      border-color: blue;
+      padding: inherit;
+      display: inline-block;
     }
   }
 }
