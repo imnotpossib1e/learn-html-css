@@ -24,17 +24,18 @@ body {
 .member-service {
   /* background: yellow; */
   display: flow-root;
-
   a {
     /* background: lime; */
-    float: left;
     text-transform: uppercase;
+    float: left;
   }
 
   a:nth-child(n + 2)::before {
     content: '|';
     margin: 0 0.5em;
   }
+
+
 }
 
 /* 멤버 링크 */
