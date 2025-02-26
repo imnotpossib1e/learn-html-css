@@ -1,0 +1,79 @@
+@import "/src/common/modern-reset.css";
+@import "/src/common/a11y.css";
+
+/* 아바타 컴포넌트 */
+/* 인터렉션이 없는 이미지 컴포넌트 */
+.img-avatar{
+  --size: 4rem;
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-active:#4cfe88;
+  --state-border:#fff;
+
+  position: relative;
+  width: var(--size);
+
+  img{
+    width: 100%; /* 부모 크기의 100% */
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+  }
+
+  .state{
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--state-border);
+    background: var(--state);
+
+    &.is-active{
+      background: var(--state-active);
+    }
+  }
+
+}
+
+
+/* 인터렉션이 있는 버튼 컴포넌트 */
+.button-avatar{
+  --size: 4rem;
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-active:#4cfe88;
+  --state-border:#fff;
+
+  position: relative;
+  width: var(--size);
+  background: transparent; /* none, 0 */
+  /* background-color: transparent; 일때만 배경 없음 */
+  border: 0;
+  padding: 0;
+  
+  img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+  }
+
+  &::after{
+    /* 눈에 안보이는 가상의 요소로 설정 */
+    content: "";
+
+    position: absolute; /* BFC */
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--state-border);
+    background: var(--state);
+  }
+
+  /* 버튼이 is-active를 가졌을 때 after로 접근 */
+  &.is-active::after{
+    background: var(--state-active);
+  }
+}
