@@ -22,6 +22,7 @@ body {
     /* background: skyblue; */
     font-size: 1.5rem;
     font-weight: 600;
+    line-height: 0.9;
 
     span {
       vertical-align: top;
@@ -31,8 +32,8 @@ body {
         font-size: 0.5em;
         /* background: yellow; */
         /* 옆의 글씨와 높이를 맞추기 위한 설정 */
-        position: relative;
-        top: 1px;
+        /* position: relative;
+        top: 1px; */
       }
     }
   }
