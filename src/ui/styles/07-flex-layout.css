@@ -51,8 +51,8 @@
   height: 15vh;
 }
 
-/* 메인 콘텐츠와 사이드바 그룹
-.wrapper{
+/* 메인 콘텐츠와 사이드바 그룹 */
+/* .wrapper{
   border: 10px solid red;
   
   @media (min-width: 768px) {
