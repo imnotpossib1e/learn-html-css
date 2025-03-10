@@ -64,7 +64,8 @@
   padding: 1em;
   columns: 3;
 
-  .case{
-    break-after: always;
+  .case-02{
+    break-after: column;
+    border: 1px solid red;
   }
 }
