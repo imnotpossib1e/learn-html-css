@@ -1,0 +1,51 @@
+@layer module, state;
+
+/* 레이어 우선순위 */
+/* 3 */
+@layer state {
+  p.alert { background-color: purple; }
+  p { border: medium solid limegreen; padding: 2em; }
+}
+
+/* 4 */
+@layer module {
+  .alert {
+    border: medium solid violet; color: white;
+  }
+  p{ padding: 1em; }
+  p.alert{ background: red ; }
+}
+
+/* 2 */
+@layer{
+  p.alert { background: blue ; }
+}
+
+/* 1 */
+p.alert{ background: gray; }
+
+
+
+/* 레이어+important 우선순위 */
+/* 2 */
+/* @layer state {
+  p.alert { background-color: purple ; }
+  p { border: medium solid limegreen; padding: 2em; }
+} */
+
+/* 1 */
+/* @layer module {
+  .alert {
+    border: medium solid violet; color: white;
+  }
+  p{ padding: 1em; }
+  p.alert{ background: red ; }
+} */
+
+/* 3 */
+/* @layer{
+  p.alert { background: blue !important; }
+} */
+
+/* 4 */
+/* p.alert{ background: gray !important; } */
